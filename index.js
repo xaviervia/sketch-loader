@@ -30,7 +30,7 @@ module.exports = function (source) {
             } else if (pair[0] === 'meta.json') {
               result.meta = pair[1]
             } else {
-              result.pages[pair[0].split('/')[1].slice(0, -4)] = pair[1]
+              result.pages[pair[0].split('/')[1].slice(0, -5)] = pair[1]
             }
 
             return result
