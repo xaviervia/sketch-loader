@@ -3,7 +3,7 @@
 Webpack loader for Sketch (+43) files
 
 ```
-npm install --save ast-loader
+npm install --save sketch-loader
 ```
 
 ```javascript
