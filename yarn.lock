@@ -14,9 +14,21 @@ es6-promise@~3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-3.0.2.tgz#010d5858423a5f118979665f46486a95c6ee2bb6"
 
+folktale@^2.0.0-alpha3:
+  version "2.0.0-alpha3"
+  resolved "https://registry.yarnpkg.com/folktale/-/folktale-2.0.0-alpha3.tgz#45f51feb486f00aa3d1d6f0f51eb45406c344899"
+
 immediate@~3.0.5:
   version "3.0.6"
   resolved "https://registry.yarnpkg.com/immediate/-/immediate-3.0.6.tgz#9db1dbd0faf8de6fbe0f5dd5e56bb606280de69b"
+
+immutable-ext@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/immutable-ext/-/immutable-ext-1.0.8.tgz#be49852c009b9c06cbceaf166c873a1d109a4ddc"
+
+immutable@^3.8.1:
+  version "3.8.1"
+  resolved "https://registry.yarnpkg.com/immutable/-/immutable-3.8.1.tgz#200807f11ab0f72710ea485542de088075f68cd2"
 
 inherits@~2.0.1:
   version "2.0.3"

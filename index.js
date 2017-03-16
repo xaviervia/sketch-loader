@@ -1,27 +1,45 @@
 // lib to read and write to the zip
-const JSZip = require('jszip')
 const fs = require('fs')
+const {List} = require('immutable-ext')
+const Task = require('folktale/data/task')
+const getFileListFromZip = require('./getFileListFromZip')
+const getFileFromZip = require('./getFileFromZip')
 
 module.exports = function (source) {
   var callback = this.async()
 
-  JSZip
-    .loadAsync(source)
-    .then(function (zip) {
-      zip
-        .file('document.json')
-        .async('string')
-        .then(function (content) {
-          var result = {
-            document: JSON.parse(content)
-          }
-
-          callback(null, 'module.exports = ' + JSON.stringify(result))
+  getFileListFromZip(source)
+    .chain(function (zip) {
+      return List(
+        Object
+          .keys(zip.files)
+          .filter(function (path) {
+          return path.slice(-5) === '.json'
         })
+      )
+        .traverse(Task.of, path => getFileFromZip(zip, path))
     })
-    .catch(function (error) {
-      callback(error)
+    .chain(function (parsedPairsList) {
+      var result = parsedPairsList
+        .reduce(
+          function (result, pair) {
+            if (pair[0] === 'document.json') {
+              result.document = pair[1]
+            } else if (pair[0] === 'user.json') {
+              result.user = pair[1]
+            } else if (pair[0] === 'meta.json') {
+              result.meta = pair[1]
+            } else {
+              result.pages[pair[0].split('/')[1].slice(0, -4)] = pair[1]
+            }
+
+            return result
+          }, {pages: {}}
+        )
+
+      callback(null, 'module.exports = ' + JSON.stringify(result))
     })
+    .run()
 }
 
 module.exports.raw = true
