@@ -30,6 +30,10 @@ sketchFile.pages['0F364A54-A488-4D6F-BAA4-F93FB057C5A3'] // parsed contents of p
 
 You can check the example in [examples/simple/sagui.config.js](examples/simple/sagui.config.js)
 
+## What is the structure of the contents?
+
+As far as I know, there is no official documentation yet. Meanwhile this [structure information](https://gist.github.com/xaviervia/edbea95d321feacaf0b5d8acd40614b2) from my explorations might be handy.
+
 ## License
 
 MIT License
