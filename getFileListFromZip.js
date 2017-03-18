@@ -3,7 +3,6 @@ const {task} = require('folktale/data/task')
 
 module.exports = function (zippedFolder) {
   return task(function ({resolve, reject}) {
-    console.log('wtf')
     JSZip
       .loadAsync(zippedFolder)
       .then(function (zip) {
