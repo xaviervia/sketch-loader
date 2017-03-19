@@ -18,5 +18,8 @@
   "license": "ISC",
   "devDependencies": {
     "sagui": "^8.0.2"
+  },
+  "dependencies": {
+    "sketch-loader": "^0.1.2"
   }
 }
