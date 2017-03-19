@@ -35,7 +35,9 @@ You can check the example in [examples/simple/sagui.config.js](examples/simple/s
 
 ## What is the structure of the contents?
 
-As far as I know, there is no official documentation yet. Meanwhile this [structure information](https://gist.github.com/xaviervia/edbea95d321feacaf0b5d8acd40614b2) from my explorations might be handy.
+As far as I know, there is no official documentation yet. 
+
+Meanwhile here you can find [Flowtype definitions for Sketch 43+ JSON](https://github.com/darknoon/sketchapp-json-flow-types/blob/master/types.js) by @darknoon to use as guide.
 
 ## License
 
