@@ -22,12 +22,6 @@
   },
   "homepage": "https://github.com/xaviervia/sketch-loader#readme",
   "dependencies": {
-    "add": "^2.0.6",
-    "folktale": "^2.0.0-alpha3",
-    "global": "^4.3.1",
-    "immutable": "^3.8.1",
-    "immutable-ext": "^1.0.8",
-    "jszip": "^3.1.3",
     "sketch2json": "^0.1.0"
   },
   "devDependencies": {
