@@ -1,4 +1,3 @@
-// lib to read and write to the zip
 const sketch2json = require('sketch2json')
 
 module.exports = function (source) {
