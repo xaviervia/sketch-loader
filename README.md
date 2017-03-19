@@ -1,5 +1,8 @@
 # sketch-loader
 
+[![https://travis-ci.org/xaviervia/sketch-loader.svg?branch=master](https://travis-ci.org/xaviervia/sketch-loader.svg?branch=master)](https://travis-ci.org/xaviervia/sketch-loader/builds) [![npm version](https://img.shields.io/npm/v/sketch-loader.svg?maxAge=1000)](https://www.npmjs.com/package/sketch-loader)
+
+
 Webpack loader for Sketch (+43) files
 
 ```
