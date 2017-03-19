@@ -1,8 +1,8 @@
 const JSZip = require('jszip')
 const {task} = require('folktale/data/task')
 
-module.exports = function (zippedFolder) {
-  return task(function ({resolve, reject}) {
+module.exports = (zippedFolder) =>
+  task(({resolve, reject}) =>
     JSZip
       .loadAsync(zippedFolder)
       .then(function (zip) {
@@ -11,5 +11,4 @@ module.exports = function (zippedFolder) {
       .catch(function (error) {
         reject(error)
       })
-  })
-}
+  )
