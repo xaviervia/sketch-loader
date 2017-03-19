@@ -1,14 +1,21 @@
-const getZipContentsTests = require('./getZipContentsTests')
-const getFileFromZipTests = require('./getFileFromZipTests')
-const getSketchContentsTests = require('./getSketchContentsTests')
+const fs = require('fs')
+const sketchLoader = require('../')
+const fixture = require('./fixtures/simple.json')
 
-const withNamespace = namespace => ({description, test, shouldEqual}) => ({
-  description: `${namespace}: ${description}`,
-  test,
-  shouldEqual
-})
+module.exports = [
+  {
+    description: 'passes the parsed sketch data to the callback',
+    test: check => {
+      fs.readFile(__dirname + '/fixtures/simple.sketch', (error, data) => {
+        const context = {
+          async: () => (error, moduleValue) => {
+            check(JSON.parse(moduleValue.slice(17)))
+          }
+        }
 
-module.exports = []
-  .concat(getZipContentsTests.map(withNamespace('getZipContents')))
-  .concat(getFileFromZipTests.map(withNamespace('getFileFromZip')))
-  .concat(getSketchContentsTests.map(withNamespace('getSketchContents')))
+        sketchLoader.bind(context)(data)
+      })
+    },
+    shouldEqual: fixture
+  }
+]

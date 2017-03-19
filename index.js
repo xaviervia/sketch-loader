@@ -1,19 +1,12 @@
 // lib to read and write to the zip
-const {task} = require('folktale/data/task')
-const getSketchContents = require('./getSketchContents')
+const sketch2json = require('sketch2json')
 
 module.exports = function (source) {
   var callback = this.async()
 
-  getSketchContents(source)
-    .chain(result =>
-      task(({resolve}) => {
-        callback(null, 'module.exports = ' + JSON.stringify(result))
-
-        resolve(result)
-      })
-    )
-    .run()
+  sketch2json(source).then(result => {
+    callback(null, 'module.exports = ' + JSON.stringify(result))
+  })
 }
 
 module.exports.raw = true

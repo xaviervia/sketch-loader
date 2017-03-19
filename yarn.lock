@@ -136,6 +136,15 @@ readable-stream@~2.0.6:
     string_decoder "~0.10.x"
     util-deprecate "~1.0.1"
 
+sketch2json@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/sketch2json/-/sketch2json-0.1.0.tgz#783964aa3a05dc14d1d71ff8819860e3807a25b9"
+  dependencies:
+    folktale "^2.0.0-alpha3"
+    immutable "^3.8.1"
+    immutable-ext "^1.0.8"
+    jszip "^3.1.3"
+
 string_decoder@~0.10.x:
   version "0.10.31"
   resolved "https://registry.yarnpkg.com/string_decoder/-/string_decoder-0.10.31.tgz#62e203bc41766c6c28c9fc84301dab1c5310fa94"
